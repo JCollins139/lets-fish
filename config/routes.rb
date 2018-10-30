@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/spots/:id', to: 'spots#index'
 
   devise_for :users
+
   resources :spots, only: [:index]
 
   namespace :api do
