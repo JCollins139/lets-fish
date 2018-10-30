@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  get '/spots', to: 'spots#index'
+  root 'spots#index'
+  get '/spots/:id', to: 'spots#index'
+
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :spots, only: [:index]
+
+  namespace :api do
+    namespace :v1 do
+      resources :spots, only: [:index, :show] do
+
+      end
+    end
+  end
 end

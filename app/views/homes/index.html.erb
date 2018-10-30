@@ -1,4 +1,9 @@
-<p>
-  Modify me in `app/views/homes/index.html.erb` or change the root directive in
-  `config/routes.rb`
-</p>
+<h1>Let's Fish!</h1>
+
+<ul>
+  <% @spots.each do |spot| %>
+    <li><%= link_to spot.name, spot_path(spot) %> </li>
+
+    <% end %>
+</ul>
+<%= link_to 'Add New Fishing Spot!', new_spot_path %>
