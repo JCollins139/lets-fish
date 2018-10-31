@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/spots', to: 'spots#index'
-  root 'spots#index'
+  root 'homes#index'
   get '/spots/:id', to: 'spots#index'
 
   devise_for :users

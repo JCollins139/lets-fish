@@ -5,7 +5,7 @@
 
 <div>
   <%= f.label :first_name, 'First Name', :class => 'email-field' %><br />
-  <em>(Will Not be Displayed)</em>
+  <em>(Will Not Display Unless Specified)</em>
   <div class="input-form">
     <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
   </div>
@@ -13,7 +13,7 @@
 
 <div>
   <%= f.label :last_name, 'Last Name', :class => 'email-field' %><br />
-  <em>(Will Not Display On Website)</em>
+  <em>(Will Not Display Unless Specified)</em>
   <div class="input-form">
     <%= f.text_field :last_name, autocomplete: "last_name" %>
   </div>
@@ -21,7 +21,7 @@
 
 <div>
   <%= f.label :user_name, 'User Name', :class => 'email-field' %><br />
-  <em>(Displayed On Website)</em>
+  <em>(Displayed Name)</em>
   <div class="input-form">
     <%= f.text_field :user_name, autocomplete: "user_name" %>
   </div>

@@ -15,3 +15,17 @@
  *= require foundation_and_overrides
 
  */
+
+ /* Backgrounds
+      lonely_fisherman = url(https://img00.deviantart.net/efa8/i/2013/317/8/e/gone_fishing_by_arisuonpaa-d6u6ii1.jpg?raw=1)
+
+  */
+
+
+
+ body {
+   background: url(https://img00.deviantart.net/efa8/i/2013/317/8/e/gone_fishing_by_arisuonpaa-d6u6ii1.jpg?raw=1) no-repeat center center fixed, rgba(251,233,223,0.7);
+   background-position: center;
+   background-size: cover;
+   background-blend-mode: lighten;
+ }
