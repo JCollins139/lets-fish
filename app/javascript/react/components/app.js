@@ -8,7 +8,7 @@ export const App = (props) => {
   return (
     <div>
     <Router history={browserHistory}>
-    <Route path='/spots' component={SpotIndex}/>
+    <Route path='/' component={SpotIndex}/>
     <Route path='/spots/:id' component={SpotShow}/>
     </Router>
     </div>

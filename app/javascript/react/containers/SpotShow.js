@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
+import ReviewTile from '../components/ReviewTile'
 
 class SpotShow extends Component {
   constructor(props){
     super(props)
     this.state = {
-      spot: []
+      spot: [],
+      reviews: []
     }
   }
 
   componentDidMount(){
-
     let spotId = this.props.params.id
     fetch(`/api/v1/spots/${spotId}`)
     .then(response => {
@@ -23,15 +24,26 @@ class SpotShow extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ spot: body })
+
+      this.setState({ spot: body.spot, reviews: body.spot.reviews})
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
   render(){
+    let allReviews = this.state.reviews.map(review => {
+      return(
+        <ReviewTile
+          id = {review.id}
+          key = {review.id}
+          body = {review.body}
+          rating = {review.rating}
+          season = {review.season}
+        />
+      )
+    })
+
     let theSpot = this.state.spot
-
     let ramp;
-
       if (theSpot.boat_ramp) {
         ramp = "Has a ramp!"
       } else {
@@ -62,29 +74,36 @@ class SpotShow extends Component {
           theDock = "No public dock available"
         }
 
-
-    console.log(theSpot.boat_ramp)
     return(
-      <div className='text-center spot-show'>
+      <div className='lookit'>
+        <div className='text-center spot-show'>
 
-        <h2>Welcome to {theSpot.name}!</h2>
-        <h3>Address: </h3>
-        <h4>{location}</h4>
-        <h3>Town/City: </h3>
-        <h4>{theSpot.city}</h4>
-        <h3>State: </h3>
-        <h4>{theSpot.state}</h4>
-        <h3>Boat Ramp: </h3>
-        <h4>{ramp}</h4>
-        <h3>Parking:</h3>
-        <h4>{parkingLot}</h4>
-        <h3>Dock: </h3>
-        <h4>{theDock}</h4>
+          <h2>Welcome to {theSpot.name}!</h2>
+          <h3>Address: </h3>
+          <h4>{location}</h4>
+          <h3>Town/City: </h3>
+          <h4>{theSpot.city}</h4>
+          <h3>State: </h3>
+          <h4>{theSpot.state}</h4>
+          <h3>Boat Ramp: </h3>
+          <h4>{ramp}</h4>
+          <h3>Parking:</h3>
+          <h4>{parkingLot}</h4>
+          <h3>Dock: </h3>
+          <h4>{theDock}</h4>
+          <h3>Review: </h3>
+          <div className="text-left">
 
+            <h4>{allReviews} </h4>
+
+
+          </div>
+
+
+        </div>
       </div>
     )
   }
-
 }
 
 export default SpotShow

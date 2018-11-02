@@ -22,13 +22,14 @@ class SpotIndex extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ spots: body })
+      this.setState({ spots: body.spots })
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
     let mappedSpots = this.state.spots.map(spot => {
+
       return(
         <SpotTile
           key = {spot.id}

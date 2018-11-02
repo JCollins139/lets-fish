@@ -17,8 +17,8 @@
  */
 
  /* Backgrounds
-      lonely_fisherman = url(https://img00.deviantart.net/efa8/i/2013/317/8/e/gone_fishing_by_arisuonpaa-d6u6ii1.jpg?raw=1)
-
+        lonely_fisherman = url(https://img00.deviantart.net/efa8/i/2013/317/8/e/gone_fishing_by_arisuonpaa-d6u6ii1.jpg?raw=1)
+        Credit to arisuonpaa on deviantart
   */
 
 
@@ -29,3 +29,35 @@
    background-size: cover;
    background-blend-mode: lighten;
  }
+
+/* .spot-show {
+  font-family: 'Lobster', cursive;
+  border: solid;
+  border-color: black;
+  margin-bottom: 50px;
+  padding-top: 50px;
+} */
+
+ .spot-show h2{
+  font-family: 'Lobster', cursive;
+  color: red;
+}
+
+.spot-show h3{
+ font-family: 'Lobster', cursive;
+ color: red;
+}
+
+.spot-show h4{
+ font-family: 'Titillium Web', sans-serif;
+ color: black;
+}
+
+.all-spots h1{
+  font-family: 'Lobster', cursive;
+  color: red;
+}
+
+.text-left {
+  margin-left: 125px;
+}
