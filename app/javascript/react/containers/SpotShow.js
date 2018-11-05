@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import ReviewTile from '../components/ReviewTile'
+import ReviewShow from '../components/ReviewShow'
+import ReviewFormContainer from './ReviewFormContainer'
 
 class SpotShow extends Component {
   constructor(props){
@@ -8,6 +10,25 @@ class SpotShow extends Component {
       spot: [],
       reviews: []
     }
+    this.addNewReview = this.addNewReview.bind(this)
+  }
+
+  addNewReview(formPayload) {
+    let spotId = this.props.params.id
+    fetch(`/api/v1/spots/${spotId}/reviews`, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formPayload)
+    })
+    .then((response) => response.json())
+    .then((responseData) => {
+      debugger
+      let newReviewArray = this.state.reviews.concat(responseData.review)
+      this.setState({reviews: newReviewArray})
+    })
   }
 
   componentDidMount(){
@@ -45,7 +66,7 @@ class SpotShow extends Component {
     let theSpot = this.state.spot
     let ramp;
       if (theSpot.boat_ramp) {
-        ramp = "Has a ramp!"
+        ramp = "Yes there as a suitable boat ramp"
       } else {
         ramp = "Does not have a ramp"
       }
@@ -75,9 +96,8 @@ class SpotShow extends Component {
         }
 
     return(
-      <div className='lookit'>
-        <div className='text-center spot-show'>
 
+        <div className='text-center spot-show'>
           <h2>Welcome to {theSpot.name}!</h2>
           <h3>Address: </h3>
           <h4>{location}</h4>
@@ -92,16 +112,13 @@ class SpotShow extends Component {
           <h3>Dock: </h3>
           <h4>{theDock}</h4>
           <h3>Review: </h3>
-          <div className="text-left">
-
+          <div className="review-post">
             <h4>{allReviews} </h4>
-
-
-          </div>
-
-
+          </div> 
+            <ReviewFormContainer
+              addNewReview={this.addNewReview}
+            />
         </div>
-      </div>
     )
   }
 }
