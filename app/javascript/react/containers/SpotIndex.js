@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SpotTile from '../components/SpotTile'
+import NewSpotFormContainer from './NewSpotFormContainer'
 
 class SpotIndex extends Component {
   constructor(props){
@@ -7,6 +8,22 @@ class SpotIndex extends Component {
     this.state = {
       spots: []
     }
+  }
+
+  addNewSpot(formPayload) {
+    fetch(`/api/v1/spots`, {
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formPayload)
+    })
+    .then((response) => response.json())
+    .then((responseData) => {
+      let newSpotArray = this.state.spots.concat(responseData.spot)
+      this.setState({spots: newSpotArray})
+    })
   }
 
   componentDidMount(){
@@ -51,8 +68,6 @@ class SpotIndex extends Component {
       </div>
     )
   }
-
-
 }
 
 export default SpotIndex

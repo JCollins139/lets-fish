@@ -4,11 +4,13 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :spots, only: [:index]
+  resources :users, only: [:show]
+
+  resources :spots, only: [:index, :show]
 
   namespace :api do
     namespace :v1 do
-      resources :spots, only: [:index, :show] do
+      resources :spots, only: [:index, :show, :create] do
         resources :reviews, only: [:index, :show, :create]
 
       end

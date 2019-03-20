@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
   def index
-    @spots = Spot.all
+    # @spots = Spot.all
   end
 end

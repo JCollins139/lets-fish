@@ -25,7 +25,6 @@ class SpotShow extends Component {
     })
     .then((response) => response.json())
     .then((responseData) => {
-      debugger
       let newReviewArray = this.state.reviews.concat(responseData.review)
       this.setState({reviews: newReviewArray})
     })
@@ -114,7 +113,7 @@ class SpotShow extends Component {
           <h3>Review: </h3>
           <div className="review-post">
             <h4>{allReviews} </h4>
-          </div> 
+          </div>
             <ReviewFormContainer
               addNewReview={this.addNewReview}
             />

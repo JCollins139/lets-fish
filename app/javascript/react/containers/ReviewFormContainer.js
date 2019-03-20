@@ -15,6 +15,7 @@ class ReviewFormContainer extends Component {
     this.handleSeasonChange = this.handleSeasonChange.bind(this)
     this.handleRatingChange = this.handleRatingChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleClearForm = this.handleClearForm.bind(this)
   }
 
   handleBodyChange(event) {
@@ -44,10 +45,19 @@ class ReviewFormContainer extends Component {
       rating: statefullRating
     }
     this.props.addNewReview(payLoad)
+    this.handleClearForm(event)
+  }
+
+  handleClearForm(event) {
+    event.preventDefault();
+    this.setState({
+      reviewBody: '',
+      reviewSeason: '',
+      reviewRating: ''
+    });
   }
 
   render() {
-    console.log(this.state)
     return(
       <div className="review-container">
         <form onSubmit={this.handleSubmit} className="new-review-form callout">
@@ -73,14 +83,13 @@ class ReviewFormContainer extends Component {
           />
 
           <div className="button-group">
-            <button className= "clear-button">Clear</button>
+            <button onClick={this.handleClearForm} className= "clear-button">Clear</button>
             <input className= "button" type="submit" value="Submit" />
           </div>
         </form>
       </div>
     )
   }
-
 }
 
 export default ReviewFormContainer;

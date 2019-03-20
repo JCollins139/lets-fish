@@ -11,7 +11,6 @@ const ReviewTile = (props) => {
       </div>
     </div>
   )
-
 }
 
 export default ReviewTile;

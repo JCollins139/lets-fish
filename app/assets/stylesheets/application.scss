@@ -28,6 +28,21 @@
         Credit to arisuonpaa on deviantart
   */
 
+
+
+.landing-page h1{
+  font-family: 'Lobster', cursive;
+  color: red;
+}
+
+.landing-page {
+  margin-top: 30px;
+  border: solid;
+  font-family: 'Lobster', cursive;
+  background-color: rgba(54, 54, 54, 0.8);
+}
+
+
 .button {
   margin-left: 20px;
 }
@@ -61,6 +76,14 @@
 
 }
 
+.review-show {
+  background-color: grey;
+  padding-left: 20px;
+  text-align: left;
+  margin: 50px;
+  border: solid;
+  border-radius: 20px;
+}
 
 /* .spot-show {
   font-family: 'Lobster', cursive;
@@ -91,7 +114,89 @@
   font-family: 'Lobster', cursive;
   color: red;
 }
+
+.sign-in {
+  margin: 75px;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.sign-in h3{
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.sign-up {
+  margin: 75px;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.sign-up h3{
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.devise-links {
+  margin-left: 50px;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.top-bar {
+  background-color: #3b443a;
+  font-family: 'Lobster', cursive;
+}
+
+.top-bar a {
+  font-family: 'Lobster', cursive;
+}
+
+.top-bar a:hover {
+  background-color: #2F397B;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background-color: #3b443a;
+    font-family: 'Lobster', cursive;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+  background-color: #2F397B;
+  background: #16205E;
+}
+
+
 //
 // .text-left {
 //   margin-left: 125px;
 // }
+
+.translucent-form-overlay {
+  margin: auto;
+  margin-top: 30px;
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 20px;
+  color: #fefefe;
+}
+
+.translucent-form-overlay .columns.row {
+  display: block;
+}
+
+.translucent-form-overlay h3, .translucent-form-overlay label {
+  color: #fefefe;
+}
+
+.translucent-form-overlay input, .translucent-form-overlay select {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::-webkit-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input:-ms-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::placeholder {
+  color: #8a8a8a;
+}
