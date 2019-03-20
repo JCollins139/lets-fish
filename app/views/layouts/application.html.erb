@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Let's Fish</title>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lobster|Permanent+Marker|Titillium+Web|Cabin+Sketch" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= stylesheet_link_tag 'application', media: 'all' %>
 
@@ -45,8 +46,12 @@
       window.railsEnv = '<%= Rails.env %>'
     <%- end -%>
   <%- end -%>
+  <%- if current_user -%>
+    <%= javascript_tag do %>
+      window.currentUser = <%== current_user.to_json %>
+    <% end %>
+  <%- end -%>
   <%= javascript_pack_tag 'application' %>
-
   <%= yield :extra_footer %>
 </body>
 </html>

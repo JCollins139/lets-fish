@@ -1,8 +1,17 @@
 import React from 'react'
 import { Router, browserHistory, Route, IndexRoute } from 'react-router';
+import SpotIndex from '../containers/SpotIndex'
+import SpotShow from  '../containers/SpotShow'
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+    <div>
+    <Router history={browserHistory}>
+    <Route path='/users/:id' component={SpotIndex}/>
+    <Route path='/spots/:id' component={SpotShow}/>
+    </Router>
+    </div>
+  )
 }
 
 export default App

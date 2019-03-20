@@ -1,0 +1,202 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+ // font-family: 'Permanent Marker', cursive;
+ // font-family: 'Dancing Script', cursive;
+ // font-family: 'Lobster', cursive;
+ // font-family: 'Titillium Web', sans-serif;
+
+
+ /* Backgrounds
+ rgba(251,233,223,0.7)
+        lonely_fisherman = url(https://img00.deviantart.net/efa8/i/2013/317/8/e/gone_fishing_by_arisuonpaa-d6u6ii1.jpg?raw=1)
+        Credit to arisuonpaa on deviantart
+  */
+
+
+
+.landing-page h1{
+  font-family: 'Lobster', cursive;
+  color: red;
+}
+
+.landing-page {
+  margin-top: 30px;
+  border: solid;
+  font-family: 'Lobster', cursive;
+  background-color: rgba(54, 54, 54, 0.8);
+}
+
+
+.button {
+  margin-left: 20px;
+}
+
+.review-container {
+  font-family:  'Titillium Web', cursive;
+  border: solid;
+  border-radius: 20px;
+  margin: 50px;
+  padding: 100px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  background: rgba(202, 187, 170, 0.8);
+}
+
+ body {
+   background: url(https://img00.deviantart.net/efa8/i/2013/317/8/e/gone_fishing_by_arisuonpaa-d6u6ii1.jpg?raw=1) no-repeat center center fixed, rgba(251,233,223,0.7);
+   background-position: center;
+   background-size: cover;
+   background-blend-mode: lighten;
+ }
+
+.review-post {
+  background: rgba(202, 187, 170, 0.8);
+  padding-left: 20px;
+  text-align: left;
+  margin: 50px;
+  border: solid;
+  border-radius: 20px;
+  opacity: 0.8;
+
+}
+
+.review-show {
+  background-color: grey;
+  padding-left: 20px;
+  text-align: left;
+  margin: 50px;
+  border: solid;
+  border-radius: 20px;
+}
+
+/* .spot-show {
+  font-family: 'Lobster', cursive;
+  border: solid;
+  border-color: black;
+  margin-bottom: 50px;
+  padding-top: 50px;
+} */
+
+
+
+ .spot-show h2 {
+  font-family: 'Lobster', cursive;
+  color: red;
+}
+
+.spot-show h3 {
+ font-family: 'Lobster', cursive;
+ color: red;
+}
+
+.spot-show h4{
+ font-family: 'Titillium Web', sans-serif;
+ color: black;
+}
+
+.all-spots h1{
+  font-family: 'Lobster', cursive;
+  color: red;
+}
+
+.sign-in {
+  margin: 75px;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.sign-in h3{
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.sign-up {
+  margin: 75px;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.sign-up h3{
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.devise-links {
+  margin-left: 50px;
+  font-family: 'Cabin Sketch', cursive;
+}
+
+.top-bar {
+  background-color: #3b443a;
+  font-family: 'Lobster', cursive;
+}
+
+.top-bar a {
+  font-family: 'Lobster', cursive;
+}
+
+.top-bar a:hover {
+  background-color: #2F397B;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+    background-color: #3b443a;
+    font-family: 'Lobster', cursive;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+  background-color: #2F397B;
+  background: #16205E;
+}
+
+
+//
+// .text-left {
+//   margin-left: 125px;
+// }
+
+.translucent-form-overlay {
+  margin: auto;
+  margin-top: 30px;
+  max-width: 500px;
+  width: 100%;
+  background-color: rgba(54, 54, 54, 0.8);
+  padding: 20px;
+  color: #fefefe;
+}
+
+.translucent-form-overlay .columns.row {
+  display: block;
+}
+
+.translucent-form-overlay h3, .translucent-form-overlay label {
+  color: #fefefe;
+}
+
+.translucent-form-overlay input, .translucent-form-overlay select {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::-webkit-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input:-ms-input-placeholder {
+  color: #8a8a8a;
+}
+
+.translucent-form-overlay input::placeholder {
+  color: #8a8a8a;
+}
